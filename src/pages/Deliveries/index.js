@@ -1,4 +1,6 @@
+/* eslint-disable consistent-return */
 import React, { useEffect, useState } from 'react';
+import { utcToZonedTime, format } from 'date-fns-tz';
 import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import {
@@ -9,6 +11,8 @@ import {
   MdDeleteForever,
 } from 'react-icons/md';
 
+import Modal from '~/components/Modal';
+import useToggle from '~/hooks/useToggle';
 import AddButton from '~/components/AddButton';
 import Empty from '~/components/Empty';
 
@@ -23,6 +27,12 @@ import {
   PageNav,
   ActionsWrapper,
   ActionsMenu,
+  Wrapper,
+  DeliverInfo,
+  DateInfo,
+  TakeDate,
+  DeliverDate,
+  Signature,
 } from './styles';
 
 import api from '~/services/api';
@@ -31,6 +41,8 @@ import history from '~/services/history';
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
   const [page, setPage] = useState(1);
+  const [open, setOpen] = useToggle(false);
+  const [selectedDeliver, setSelectedDeliver] = useState();
 
   async function loadDeliveries(pageSelected, q) {
     const response = await api.get('deliver', {
@@ -114,6 +126,28 @@ export default function Deliveries() {
       }
     }
   }
+
+  function formatDate(date) {
+    if (!date) {
+      return;
+    }
+
+    const pattern = 'dd/MM/yyyy';
+    const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+    const zonedDate = utcToZonedTime(date, timeZone);
+    const formattedDate = format(zonedDate, pattern);
+
+    return formattedDate;
+  }
+
+  async function handleModal(deliverId) {
+    const foundDeliver = deliveries.find(deliver => deliver.id === deliverId);
+    foundDeliver.formattedStartDate = formatDate(foundDeliver.start_date);
+    foundDeliver.formattedEndDate = formatDate(foundDeliver.end_date);
+    setSelectedDeliver(foundDeliver);
+    setOpen(true);
+  }
+
   return (
     <Container>
       <h1>Gerenciador de encomendas</h1>
@@ -179,11 +213,49 @@ export default function Deliveries() {
                   <button type="button" onClick={() => toggleMenu(deliver.id)}>
                     •••
                   </button>
-
                   <ActionsMenu showActionsMenu={deliver.showActionsMenu}>
-                    <li>
+                    <li
+                      onClick={() => {
+                        handleModal(deliver.id);
+                        deliver.showActionsMenu = false;
+                      }}
+                    >
                       <MdRemoveRedEye color="#8E5BE8" />
                       <span>Visualizar</span>
+                      {open && (
+                        <Modal toggle={setOpen} open={open}>
+                          <Wrapper>
+                            <DeliverInfo>
+                              <strong>Informações da encomenda</strong>
+                              <span>{`${selectedDeliver.recipient.street}, ${selectedDeliver.recipient.number}`}</span>
+                              <span>{`${selectedDeliver.recipient.city} - ${selectedDeliver.recipient.state}`}</span>
+                              <span>{selectedDeliver.recipient.zip}</span>
+                            </DeliverInfo>
+                            <DateInfo>
+                              <strong>Datas</strong>
+                              <TakeDate>
+                                <span>Retirada: </span>
+                                <span>
+                                  {selectedDeliver.formattedStartDate || 'N/A'}
+                                </span>
+                              </TakeDate>
+                              <DeliverDate>
+                                <span>Entrega: </span>
+                                <span>
+                                  {selectedDeliver.formattedEndDate || 'N/A'}
+                                </span>
+                              </DeliverDate>
+                            </DateInfo>
+                            <Signature>
+                              <strong>Assinatura do usuário</strong>
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Jim_Greer_Signiture.jpg"
+                                alt="signature"
+                              />
+                            </Signature>
+                          </Wrapper>
+                        </Modal>
+                      )}
                     </li>
                     <li onClick={() => handleEdit(deliver)}>
                       <MdCreate color="#4D85EE" />

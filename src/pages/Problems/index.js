@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
 import {
   MdRemoveRedEye,
   MdDeleteForever,
   MdKeyboardArrowRight,
   MdKeyboardArrowLeft,
 } from 'react-icons/md';
+import Modal from '~/components/Modal';
+import useToggle from '~/hooks/useToggle';
 
 import Empty from '~/components/Empty';
 
@@ -17,13 +18,15 @@ import {
   PageNav,
 } from '~/pages/Deliveries/styles';
 
-import { ActionsMenu } from './styles';
+import { ActionsMenu, ModalTitle, ModalDescription } from './styles';
 
 import api from '~/services/api';
 
 export default function Problems() {
   const [problems, setProblems] = useState([]);
   const [page, setPage] = useState(1);
+  const [open, setOpen] = useToggle(false);
+  const [selectedProblem, setSelectedProblem] = useState();
 
   async function loadProblems(pageSelected) {
     const response = await api.get('delivery/problems', {
@@ -59,6 +62,12 @@ export default function Problems() {
 
     setProblems(formatedProblems);
   }
+
+  async function handleModal(problemId) {
+    const foundProblem = problems.find(problem => problem.id === problemId);
+    setSelectedProblem(foundProblem);
+    setOpen(true);
+  }
   return (
     <Container>
       <h1>Problemas na entrega</h1>
@@ -82,9 +91,22 @@ export default function Problems() {
                   </button>
 
                   <ActionsMenu showActionsMenu={problem.showActionsMenu}>
-                    <li onClick={() => console.tron.log('')}>
+                    <li
+                      onClick={() => {
+                        handleModal(problem.id);
+                        problem.showActionsMenu = false;
+                      }}
+                    >
                       <MdRemoveRedEye color="#8E5BE8" />
                       <span>Visualizar</span>
+                      {open && (
+                        <Modal toggle={setOpen} open={open}>
+                          <ModalTitle>Visualizar problema</ModalTitle>
+                          <ModalDescription>
+                            {selectedProblem.description}
+                          </ModalDescription>
+                        </Modal>
+                      )}
                     </li>
                     <li>
                       <MdDeleteForever color="#DE3B3B" />

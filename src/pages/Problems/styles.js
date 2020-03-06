@@ -55,3 +55,15 @@ export const ActionsMenu = styled.ul`
     }
   }
 `;
+
+export const ModalTitle = styled.strong`
+  align-self: flex-start;
+  margin-top: -270px;
+  text-transform: uppercase;
+  color: #444444;
+`;
+
+export const ModalDescription = styled.span`
+  align-self: flex-start;
+  margin-top: 20px;
+`;

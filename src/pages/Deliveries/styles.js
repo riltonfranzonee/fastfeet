@@ -205,3 +205,83 @@ export const ActionsMenu = styled.ul`
     }
   }
 `;
+
+export const Wrapper = styled.div`
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+export const DeliverInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  height: 100px;
+  justify-content: space-around;
+
+  strong {
+    color: #444444;
+    margin-top: -5px;
+  }
+
+  span {
+    color: #666666;
+    font-size: 16px;
+    margin-top: 10px;
+
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
+  }
+`;
+export const DateInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  strong {
+    color: #444444;
+    margin-bottom: 5px;
+  }
+
+  span {
+    color: #666666;
+    font-size: 16px;
+  }
+`;
+export const TakeDate = styled.div`
+  margin-top: 5px;
+  span {
+    &:first-of-type {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+`;
+export const DeliverDate = styled.div`
+  margin-top: 10px;
+
+  span {
+    &:first-of-type {
+      font-weight: bold;
+    }
+  }
+`;
+export const Signature = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px 0 5px;
+
+  strong {
+    color: #444444;
+  }
+  img {
+    margin-top: 20px;
+    align-self: center;
+    width: 234px;
+    height: 60px;
+  }
+`;
