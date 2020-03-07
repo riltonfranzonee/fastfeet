@@ -41,9 +41,9 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'react/forbid-prop-types': 'off',
     'no-alert': 'off',
-    'no-return-assign': 'off'
+    'no-return-assign': 'off',
     // "react-hooks/rules-of-hooks": 'error',
-    // "react-hooks/exhaustive-deps": 'warn'
+    'react-hooks/exhaustive-deps': 'warn'
   },
   settings: {
     "import/resolver": {

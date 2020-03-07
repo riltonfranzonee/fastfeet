@@ -9,7 +9,7 @@ function Portal({ children }) {
 
   useEffect(() => {
     modalRoot.appendChild(el);
-  }, []);
+  }, [el, modalRoot]);
 
   useEffect(() => {
     return () => modalRoot.removeChild(el);
