@@ -11,11 +11,12 @@ export const Container = styled.div`
 export const FormContainer = styled.div`
   margin-top: 30px;
   width: 100%;
-  height: 220px;
+  height: 250px;
   background-color: #ffffff;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   input {
     height: 45px;
@@ -36,9 +37,8 @@ export const FormContainer = styled.div`
 export const FirstLine = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
   padding: 25px 30px;
-
+  justify-content: space-between;
   input {
     width: 405px;
   }

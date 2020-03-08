@@ -42,6 +42,7 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'no-alert': 'off',
     'no-return-assign': 'off',
+    'no-new': 'off',
     // "react-hooks/rules-of-hooks": 'error',
     'react-hooks/exhaustive-deps': 'warn'
   },

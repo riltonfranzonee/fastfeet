@@ -11,16 +11,20 @@ export const Container = styled.div`
 export const FormContainer = styled.div`
   margin-top: 30px;
   width: 100%;
-  height: 220px;
+  height: 250px;
   background-color: #ffffff;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   input {
     height: 45px;
     border: 1px solid #dddddd;
     border-radius: 4px;
+    padding: 0 15px;
+    color: #444444;
+    font-size: 15.5px;
   }
 
   span {
