@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import AsyncSelect from 'react-select/async';
-import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
 import TopLine from '~/components/TopLine';
-import { selectorStyles } from '~/components/AsyncSelector';
+import { selectorStyles } from '~/components/AsyncSelector/index';
 
 import {
   Container,
@@ -100,7 +99,6 @@ export default function DeliveryRegister() {
       toast.error(
         'Não foi possível criar a encomenda. Verifique se todos os campos foram preenchidos'
       );
-      console.tron.log(err);
     }
   }
 
@@ -128,6 +126,7 @@ export default function DeliveryRegister() {
                 defaultOptions={recipients}
                 loadOptions={promiseRcpOptions}
                 placeholder="Selecionar"
+                maxMenuHeight={80}
               />
             </div>
           </FirstLineInput>
@@ -154,7 +153,3 @@ export default function DeliveryRegister() {
     </Container>
   );
 }
-
-DeliveryRegister.propTypes = {
-  location: PropTypes.object.isRequired,
-};

@@ -129,7 +129,7 @@ export default function Deliveries() {
 
   function formatDate(date) {
     if (!date) {
-      return;
+      return null;
     }
 
     const pattern = 'dd/MM/yyyy';
@@ -145,7 +145,7 @@ export default function Deliveries() {
     foundDeliver.formattedStartDate = formatDate(foundDeliver.start_date);
     foundDeliver.formattedEndDate = formatDate(foundDeliver.end_date);
     setSelectedDeliver(foundDeliver);
-    setOpen(true);
+    setOpen(!open);
   }
 
   return (

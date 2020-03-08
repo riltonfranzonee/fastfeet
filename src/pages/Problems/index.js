@@ -5,6 +5,7 @@ import {
   MdKeyboardArrowRight,
   MdKeyboardArrowLeft,
 } from 'react-icons/md';
+import { toast } from 'react-toastify';
 import Modal from '~/components/Modal';
 import useToggle from '~/hooks/useToggle';
 
@@ -68,6 +69,16 @@ export default function Problems() {
     setSelectedProblem(foundProblem);
     setOpen(true);
   }
+
+  async function handleCancel(id) {
+    try {
+      await api.delete(`problem/${id}/cancel-delivery`);
+      toast.success('Encomenda cancelada com sucesso');
+    } catch (err) {
+      toast.error('Motivo inválido para cancelamento');
+      console.tron.log(err);
+    }
+  }
   return (
     <Container>
       <h1>Problemas na entrega</h1>
@@ -108,7 +119,7 @@ export default function Problems() {
                         </Modal>
                       )}
                     </li>
-                    <li>
+                    <li onClick={() => handleCancel(problem.id)}>
                       <MdDeleteForever color="#DE3B3B" />
                       <span>Cancelar encomenda</span>
                     </li>

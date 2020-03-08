@@ -44,7 +44,7 @@ module.exports = {
     'no-return-assign': 'off',
     'no-new': 'off',
     // "react-hooks/rules-of-hooks": 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'off'
   },
   settings: {
     "import/resolver": {

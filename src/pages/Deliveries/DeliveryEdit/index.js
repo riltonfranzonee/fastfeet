@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
 import TopLine from '~/components/TopLine';
-import { selectorStyles } from '~/components/AsyncSelector';
+import { selectorStyles } from '~/components/AsyncSelector/index';
 
 import {
   Container,
