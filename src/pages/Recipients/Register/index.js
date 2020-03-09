@@ -62,9 +62,10 @@ export default function RecipientRegister() {
     name: Yup.string().required(),
     street: Yup.string().required(),
     number: Yup.number().required(),
-    complement: Yup.string().required(),
+    complement: Yup.string(),
     city: Yup.string().required(),
     zip: Yup.number().required(),
+    state: Yup.string().required(),
   });
 
   async function registerRecipient(data) {
