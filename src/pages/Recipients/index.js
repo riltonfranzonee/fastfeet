@@ -137,7 +137,7 @@ export default function Recipients() {
                       <MdCreate color="#4D85EE" />
                       <span>Editar</span>
                     </li>
-                    <li>
+                    <li onClick={() => handleDelete(recipient.id)}>
                       <MdDeleteForever color="#DE3B3B" />
                       <span>Deletar</span>
                     </li>
