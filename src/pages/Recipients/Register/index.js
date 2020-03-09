@@ -61,11 +61,16 @@ export default function RecipientRegister() {
   const schema = Yup.object().shape({
     name: Yup.string().required(),
     street: Yup.string().required(),
-    number: Yup.number().required(),
-    complement: Yup.string(),
+    state: Yup.string()
+      .length(2)
+      .required(),
+    number: Yup.string().required(),
+    complement: Yup.string().nullable(),
     city: Yup.string().required(),
-    zip: Yup.number().required(),
-    state: Yup.string().required(),
+    zip: Yup.string()
+      .min(8)
+      .max(9)
+      .required(),
   });
 
   async function registerRecipient(data) {

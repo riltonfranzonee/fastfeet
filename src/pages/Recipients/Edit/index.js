@@ -67,7 +67,9 @@ export default function RecipientEdit({ location }) {
     id: Yup.number().required(),
     name: Yup.string().required(),
     street: Yup.string().required(),
-    state: Yup.string().required(),
+    state: Yup.string()
+      .length(2)
+      .required(),
     number: Yup.string().required(),
     complement: Yup.string().nullable(),
     city: Yup.string().required(),
