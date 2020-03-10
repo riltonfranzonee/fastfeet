@@ -26,9 +26,7 @@ export const ModalCard = styled.div`
   align-items: center;
   justify-content: center;
 `;
-export const CloseButton = styled.div`
-  cursor: pointer;
-`;
+
 export const Background = styled.div`
   position: absolute;
   width: 100%;

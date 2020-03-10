@@ -18,13 +18,13 @@ function Portal({ children }) {
   return createPortal(children, el);
 }
 
-export default function Modal({ children, toggle, open }) {
+export default function Modal({ children, open }) {
   return (
     <Portal>
       {open && (
         <ModalWrapper>
           <ModalCard>{children}</ModalCard>
-          <Background onClick={toggle(false)} />
+          <Background />
         </ModalWrapper>
       )}
     </Portal>
@@ -33,6 +33,5 @@ export default function Modal({ children, toggle, open }) {
 
 Modal.propTypes = {
   children: PropTypes.arrayOf(PropTypes.object).isRequired,
-  toggle: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
 };

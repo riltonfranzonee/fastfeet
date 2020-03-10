@@ -141,7 +141,9 @@ export default function Deliveries() {
   }
 
   async function handleModal(deliverId) {
-    const foundDeliver = deliveries.find(deliver => deliver.id === deliverId);
+    const foundDeliver = await deliveries.find(
+      deliver => deliver.id === deliverId
+    );
     foundDeliver.formattedStartDate = formatDate(foundDeliver.start_date);
     foundDeliver.formattedEndDate = formatDate(foundDeliver.end_date);
     setSelectedDeliver(foundDeliver);
