@@ -22,10 +22,6 @@ export const Table = styled.div`
       margin-bottom: 20px;
     }
 
-    img {
-      width: 50px;
-      height: 50px;
-    }
     th {
       margin: 30px 0;
     }
@@ -33,6 +29,7 @@ export const Table = styled.div`
 `;
 
 export const ActionsWrapper = styled.div`
+  margin-right: 10px;
   button {
     border: none;
   }
@@ -41,7 +38,7 @@ export const ActionsWrapper = styled.div`
 export const ActionsMenu = styled.ul`
   position: absolute;
   width: 130px;
-  left: calc(50% + 498px);
+  left: calc(50% + 488px);
   margin-top: 10px;
   background: #ffffff;
   border-radius: 4px;
@@ -101,5 +98,25 @@ export const PageNav = styled.div`
   span {
     font-size: 20px;
     padding: 0 15px;
+  }
+`;
+
+export const NameTd = styled.td`
+  width: 150px;
+  margin-left: 130px;
+`;
+
+export const EmailTd = styled.td`
+  width: 200px;
+  margin-left: 40px;
+`;
+
+export const AvatarTd = styled.td`
+  margin-top: 5px;
+  margin-left: 140px;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
   }
 `;

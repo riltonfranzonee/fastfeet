@@ -97,6 +97,19 @@ export const Table = styled.div`
   }
 `;
 
+export const IdTd = styled.td`
+  width: 50px;
+`;
+export const RecipientTd = styled.td`
+  width: 140px;
+`;
+export const CityTd = styled.td`
+  width: 100px;
+`;
+export const StateTd = styled.td`
+  width: 50px;
+`;
+
 export const StatusTd = styled.td`
   background-color: ${props => handleStatusBgColor(props.status)};
 
@@ -146,6 +159,7 @@ export const PageNav = styled.div`
 `;
 
 export const ActionsWrapper = styled.div`
+  width: 30px;
   button {
     border: none;
   }
@@ -154,7 +168,7 @@ export const ActionsWrapper = styled.div`
 export const ActionsMenu = styled.ul`
   position: absolute;
   width: 130px;
-  left: calc(50% + 498px);
+  left: calc(50% + 482px);
   margin-top: 10px;
   background: #ffffff;
   border-radius: 4px;
@@ -284,4 +298,29 @@ export const Signature = styled.div`
     width: 234px;
     height: 60px;
   }
+
+  span {
+    color: #666666;
+    font-size: 16px;
+    margin-top: 30px;
+    align-self: center;
+  }
 `;
+
+export const IdTh = styled.th``;
+export const RecipientTh = styled.th`
+  width: 140px;
+`;
+export const CityTh = styled.th`
+  width: 100px;
+`;
+export const StateTh = styled.th`
+  width: 50px;
+`;
+export const DeliverymanTh = styled.th`
+  width: 150px;
+`;
+export const StatusTh = styled.th`
+  width: 115px;
+`;
+export const ActionsTh = styled.th``;

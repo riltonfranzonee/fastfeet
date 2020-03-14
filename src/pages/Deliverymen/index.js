@@ -11,16 +11,18 @@ import {
 import AddButton from '~/components/AddButton';
 import Empty from '~/components/Empty';
 
+import { Container, SearchRow, SearchIcon } from '~/pages/Deliveries/styles';
+
 import {
-  Container,
-  SearchRow,
-  SearchIcon,
   TableWrapper,
   Table,
   ActionsWrapper,
   ActionsMenu,
   PageNav,
-} from '~/pages/Deliveries/styles';
+  NameTd,
+  EmailTd,
+  AvatarTd,
+} from './styles';
 
 import api from '~/services/api';
 import history from '~/services/history';
@@ -123,10 +125,10 @@ export default function Deliverymen() {
             {deliverymen.map(deliveryman => (
               <tr>
                 <td>{`#${deliveryman.id}`}</td>
-                <td>
+                <AvatarTd>
                   <img
                     src={
-                      deliveryman.avatar.url ||
+                      (deliveryman.avatar && deliveryman.avatar.url) ||
                       `https://ui-avatars.com/api/?name=${deliveryman.name.replace(
                         /\s/g,
                         '+'
@@ -134,9 +136,9 @@ export default function Deliverymen() {
                     }
                     alt=""
                   />
-                </td>
-                <td>{deliveryman.name}</td>
-                <td>{deliveryman.email}</td>
+                </AvatarTd>
+                <NameTd>{deliveryman.name}</NameTd>
+                <EmailTd>{deliveryman.email}</EmailTd>
                 <ActionsWrapper>
                   <button
                     type="button"

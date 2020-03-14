@@ -39,27 +39,28 @@ export const LineInput = styled.div`
   padding: 0 30px 25px 30px;
 `;
 
-export const ImageInput = styled.div`
-  margin: 20px;
+export const AvatarInput = styled.div`
   align-self: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 1px dashed #dddddd;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: opacity 0.2s;
+  margin-top: 20px;
+  margin-bottom: 30px;
 
-  &:hover {
-    opacity: 0.8;
-  }
+  label {
+    cursor: pointer;
 
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 1px dashed #dddddd;
+      background: #eee;
+    }
+
+    input {
+      display: none;
+    }
   }
 `;

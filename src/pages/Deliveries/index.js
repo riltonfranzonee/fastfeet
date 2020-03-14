@@ -22,6 +22,17 @@ import {
   SearchIcon,
   TableWrapper,
   Table,
+  IdTh,
+  RecipientTh,
+  CityTh,
+  StateTh,
+  DeliverymanTh,
+  StatusTh,
+  ActionsTh,
+  IdTd,
+  RecipientTd,
+  CityTd,
+  StateTd,
   DeliverymanTd,
   StatusTd,
   PageNav,
@@ -164,18 +175,18 @@ export default function Deliveries() {
         <TableWrapper>
           <Table>
             <tr>
-              <th>ID</th>
-              <th>Destinatário</th>
-              <th>Entregador</th>
-              <th>Cidade</th>
-              <th>Estado</th>
-              <th>Status</th>
-              <th>Ações</th>
+              <IdTh>ID</IdTh>
+              <RecipientTh>Destinatário</RecipientTh>
+              <DeliverymanTh>Entregador</DeliverymanTh>
+              <CityTh>Cidade</CityTh>
+              <StateTh>Estado</StateTh>
+              <StatusTh>Status</StatusTh>
+              <ActionsTh>Ações</ActionsTh>
             </tr>
             {deliveries.map(deliver => (
               <tr key={deliver.id}>
-                <td>{`#${deliver.id}`}</td>
-                <td>{deliver.recipient.name}</td>
+                <IdTd>{`#${deliver.id}`}</IdTd>
+                <RecipientTd>{deliver.recipient.name}</RecipientTd>
                 <DeliverymanTd>
                   <img
                     src={`https://ui-avatars.com/api/?name=${deliver.deliveryman.name.replace(
@@ -186,8 +197,8 @@ export default function Deliveries() {
                   />
                   {deliver.deliveryman.name}
                 </DeliverymanTd>
-                <td>{deliver.recipient.city}</td>
-                <td>{deliver.recipient.state}</td>
+                <CityTd>{deliver.recipient.city}</CityTd>
+                <StateTd>{deliver.recipient.state}</StateTd>
                 {deliver.start_date &&
                 deliver.end_date === null &&
                 deliver.canceled_at === null ? (
@@ -225,7 +236,7 @@ export default function Deliveries() {
                       <MdRemoveRedEye color="#8E5BE8" />
                       <span>Visualizar</span>
                       {open && (
-                        <Modal toggle={setOpen} open={open}>
+                        <Modal open={open}>
                           <Wrapper>
                             <DeliverInfo>
                               <strong>Informações da encomenda</strong>
@@ -238,22 +249,30 @@ export default function Deliveries() {
                               <TakeDate>
                                 <span>Retirada: </span>
                                 <span>
-                                  {selectedDeliver.formattedStartDate || 'N/A'}
+                                  {selectedDeliver.formattedStartDate ||
+                                    'Pendente'}
                                 </span>
                               </TakeDate>
                               <DeliverDate>
                                 <span>Entrega: </span>
                                 <span>
-                                  {selectedDeliver.formattedEndDate || 'N/A'}
+                                  {selectedDeliver.formattedEndDate ||
+                                    'Pendente'}
                                 </span>
                               </DeliverDate>
                             </DateInfo>
                             <Signature>
                               <strong>Assinatura do usuário</strong>
-                              <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Jim_Greer_Signiture.jpg"
-                                alt="signature"
-                              />
+                              {selectedDeliver.signature ? (
+                                <img
+                                  src={selectedDeliver.signature.url}
+                                  alt="assinatura do destinatário"
+                                />
+                              ) : (
+                                <span>
+                                  Assinatura ainda não registrada no sistema
+                                </span>
+                              )}
                             </Signature>
                           </Wrapper>
                         </Modal>

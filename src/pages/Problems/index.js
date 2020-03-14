@@ -19,7 +19,13 @@ import {
   PageNav,
 } from '~/pages/Deliveries/styles';
 
-import { ActionsMenu, ModalTitle, ModalDescription } from './styles';
+import {
+  ActionsMenu,
+  ModalTitle,
+  ModalDescription,
+  ProblemTd,
+  IdTd,
+} from './styles';
 
 import api from '~/services/api';
 
@@ -94,8 +100,10 @@ export default function Problems() {
 
             {problems.map(problem => (
               <tr>
-                <td>{`#${problem.delivery_id}`}</td>
-                <td>{problem.description}</td>
+                <IdTd>
+                  {problem.delivery_id ? `#${problem.delivery_id}` : 'Deletada'}
+                </IdTd>
+                <ProblemTd>{problem.description}</ProblemTd>
                 <ActionsWrapper>
                   <button type="button" onClick={() => toggleMenu(problem.id)}>
                     •••

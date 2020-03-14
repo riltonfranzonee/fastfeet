@@ -4,7 +4,7 @@ import { darken } from 'polished';
 export const ActionsMenu = styled.ul`
   position: absolute;
   width: 200px;
-  left: calc(50% + 462.5px);
+  left: calc(50% + 448px);
   margin-top: 10px;
   background: #ffffff;
   border-radius: 4px;
@@ -66,4 +66,13 @@ export const ModalTitle = styled.strong`
 export const ModalDescription = styled.span`
   align-self: flex-start;
   margin-top: 20px;
+`;
+
+export const ProblemTd = styled.td`
+  width: 200px;
+  margin-left: 150px;
+`;
+
+export const IdTd = styled.td`
+  width: 60px;
 `;

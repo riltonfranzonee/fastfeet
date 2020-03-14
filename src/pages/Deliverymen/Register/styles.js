@@ -21,6 +21,9 @@ export const FormContainer = styled.div`
     height: 45px;
     border: 1px solid #dddddd;
     border-radius: 4px;
+    padding: 0 15px;
+    color: #444444;
+    font-size: 15.5px;
   }
 
   span {
@@ -30,7 +33,7 @@ export const FormContainer = styled.div`
   }
 `;
 
-export const ImageInput = styled.div`
+export const AvatarInput = styled.div`
   margin: 20px;
   align-self: center;
   width: 150px;
@@ -42,13 +45,14 @@ export const ImageInput = styled.div`
   justify-content: center;
   align-items: center;
 
-  span {
-    color: #dddddd;
-    font-weight: bold;
-  }
-
-  cursor: pointer;
   transition: opacity 0.2s;
+
+  label {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -59,10 +63,29 @@ export const ImageInput = styled.div`
     height: 100%;
     border-radius: 50%;
   }
+
+  input {
+    display: none;
+  }
 `;
 
 export const LineInput = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 30px 25px 30px;
+`;
+
+export const EmptyImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: #dddddd;
+    margin-top: 10px;
+    font-weight: bold;
+  }
 `;

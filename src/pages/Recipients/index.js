@@ -22,6 +22,8 @@ import {
   PageNav,
 } from '~/pages/Deliveries/styles';
 
+import { IdTd, NameTd, AddressTd } from './styles';
+
 import api from '~/services/api';
 import history from '~/services/history';
 
@@ -121,9 +123,9 @@ export default function Recipients() {
 
             {recipients.map(recipient => (
               <tr>
-                <td>{`#${recipient.id}`}</td>
-                <td>{recipient.name}</td>
-                <td>{`${recipient.street}, ${recipient.number}, ${recipient.city} - ${recipient.state}`}</td>
+                <IdTd>{`#${recipient.id}`}</IdTd>
+                <NameTd>{recipient.name}</NameTd>
+                <AddressTd>{`${recipient.street}, ${recipient.number}, ${recipient.city} - ${recipient.state}`}</AddressTd>
                 <ActionsWrapper>
                   <button
                     type="button"
