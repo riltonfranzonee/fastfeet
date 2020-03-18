@@ -25,7 +25,7 @@ This project is a full control system for a fictional shipping company called Fa
 <img width="1430" alt="11" src="https://user-images.githubusercontent.com/58868651/77009083-12aa4f80-6946-11ea-808a-6557b8b7bccd.png">
 <img width="1426" alt="12" src="https://user-images.githubusercontent.com/58868651/77009086-1342e600-6946-11ea-9a8f-f49297390824.png">
 
-:wrench: Technologies used:
+:wrench: Used technologies:
 ----------------------
 The web version of the application was developed with ReactJS and to help me to develop all the functionalities and have a great user experience I used the following technologies:
 
