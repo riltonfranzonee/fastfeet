@@ -55,7 +55,6 @@ $ yarn
 $ yarn dev
 ```
 
-After that you can use [*Insomnia REST Client*](https://insomnia.rest/) on *port 3000" to use the routes!
 
 
 :speech_balloon: Reach me
