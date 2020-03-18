@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-Full control system for a shipping company - RESTful API made with Node.js
+Full control system for a shipping company - Web version made with ReactJS
 </p>
 
 🚚 About FastFeet
