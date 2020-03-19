@@ -27,9 +27,11 @@ This project is a full control system for a fictional shipping company called Fa
 
 :wrench: Used technologies:
 ----------------------
-The web version of the application was developed with ReactJS and to help me to develop all the functionalities and have a great user experience I used the following technologies:
+The web version of the application handles with a lot of data and information. To help me persist data and authenticate the user I've used Redux and also Redux Saga for some async api calls. Intending to make the best user experience possible, I've also used awesome libraries such as React Toastify to handle with error/success messages. Here is a list of technlogies (at least what I remeber) that I used to develop the application:
 
 - [**ReactJS**](https://reactjs.org/)
+- [**Redux**](https://redux.js.org/)
+- [**Redux Saga**](https://redux-saga.js.org/)
 - [**Styled Components**](https://styled-components.com/)
 - [**React Select**](https://react-select.com/async)
 - [**React Icons**](https://react-icons.netlify.com/#/)
@@ -37,6 +39,9 @@ The web version of the application was developed with ReactJS and to help me to 
 - [**Axios**](https://github.com/axios/axios)
 - [**Unform**](https://unform.dev/)
 - [**date-fns**](https://date-fns.org/docs/Getting-Started)
+- [**Eslint**](https://eslint.org/)
+- [**Prettier**](https://prettier.io/)
+- [**EditorConfig**](https://editorconfig.org/)
 
 ## :information_source: How to use this project
 To clone and run this application, you'll need Git, NodeJS and Yarn. Input theese lines in your command line:
