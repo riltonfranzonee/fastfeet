@@ -59,6 +59,7 @@ $ yarn
 $ yarn dev
 ```
 
+Make sure you have the [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) up and running.
 
 
 :speech_balloon: Reach me
