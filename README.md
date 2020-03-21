@@ -43,7 +43,9 @@ The web version of the application handles with a lot of data and information. T
 - [**EditorConfig**](https://editorconfig.org/)
 
 ## :information_source: How to use this project
-To clone and run this application, you'll need Git, NodeJS and Yarn. Input these lines in your command line:
+To clone and run this application, you'll need Git, NodeJS and Yarn.
+
+You just need to run the following commands:
 
 ```bash
 # Clone this repository
