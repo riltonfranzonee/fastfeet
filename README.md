@@ -58,7 +58,7 @@ $ cd fastfeet
 $ yarn
 
 # Run the app
-$ yarn dev
+$ yarn start
 ```
 
 Make sure you have the [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) up and running.
