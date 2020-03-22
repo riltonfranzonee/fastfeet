@@ -63,9 +63,9 @@ $ yarn dev
 
 Make sure you have the [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) up and running.
 
-**Login Credentials**
-Email: admin@fastfeet.com
-Password: 123456
+## Login Credentials
+<p>Email: admin@fastfeet.com</p>
+<p>Password: 123456</p>
 
 :speech_balloon: Reach me
 ----------
