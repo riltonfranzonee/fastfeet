@@ -9,7 +9,7 @@ Full control system for a shipping company - Web version made with ReactJS
 
 🚚 About FastFeet
 ------------------
-This project is a full control system of a fictional shipping company called FastFeet. The full system has a [**web version**](https://github.com/riltonfranzonee/fastfeet) made with ReactJS, where the admin is able to take control of all processes, from listing deliveries to handle with delivery problems and change deliverymen's info. The application also has a [**mobile version**](https://github.com/riltonfranzonee/fastfeet-mobile) made with React Native, where the deliveryman is able to list all his deliveries filtering by pending or delivered, register a problem during the process and also confirm the deliver by sending a picture of the recipient's signature. All this system is served by a [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) made with Node.js 
+This project is a full control system of a fictional shipping company called FastFeet. The full system has a [**web version**](https://github.com/riltonfranzonee/fastfeet) made with ReactJS, where the admin is able to take control of all processes, from listing deliveries to handle with delivery problems and change deliverymen's info. The application also has a [**mobile version**](https://github.com/riltonfranzonee/fastfeet-mobile) made with React Native, where the deliveryman is able to list all his deliveries filtering by pending or delivered, register a problem during the process and also confirm the deliver by sending a picture of the recipient's signature. All this system is served by a [**REST API**](https://github.com/riltonfranzonee/fastfeet-api) made with Node.js 
 
 <img width="1438" alt="1" src="https://user-images.githubusercontent.com/58868651/77009014-f9090800-6945-11ea-80a1-c15860a2855e.png">
 <img width="1434" alt="2" src="https://user-images.githubusercontent.com/58868651/77009026-00c8ac80-6946-11ea-9c7e-ef43a7c02e46.png">
@@ -61,7 +61,7 @@ $ yarn
 $ yarn start
 ```
 
-Make sure you have the [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) up and running.
+Make sure you have the [**REST API**](https://github.com/riltonfranzonee/fastfeet-api) up and running.
 
 ## Login Credentials
 <p>Email: admin@fastfeet.com</p>
